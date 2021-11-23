@@ -1,11 +1,9 @@
+# importing modules
 import turtle
 import time
 import random
 
-# the width and height can be put as user's choice
-
 # food in the game
-
 food = turtle.Turtle()
 colors = random.choice(['white'])
 shapes = random.choice(['circle'])
@@ -15,6 +13,7 @@ food.color(colors)
 food.penup()
 food.goto(0, 0)
 
+# text in the game
 pen = turtle.Turtle()
 pen.speed(0)
 pen.shape("square")
@@ -24,6 +23,7 @@ pen.hideturtle()
 pen.goto(0, 250)
 pen.write("player1 : 0 player2 : 0 player3 : 0 player4 : 0", align="center", font=("candara", 24, "bold"))
 
+# setup
 running = True
 while running:
 	wn = turtle.Screen()
@@ -36,11 +36,8 @@ while running:
 	player2 = 0
 	player3 = 0
 	player4 = 0
-	# Creating a window screen
 
 	# snake1 code
-
-	# snake1: how to make 1 a variable and snake a turtle
 	snake1 = turtle.Turtle()
 	snake1.shape("square")
 	snake1.color("red")
@@ -49,7 +46,6 @@ while running:
 	snake1.direction = "Stop"
 
 	# snake2 code
-
 	snake2 = turtle.Turtle()
 	snake2.shape("square")
 	snake2.color("yellow")
@@ -57,6 +53,7 @@ while running:
 	snake2.goto(-315, -270)
 	snake2.direction = "Stop"
 
+	# snake3 code
 	snake3 = turtle.Turtle()
 	snake3.shape("square")
 	snake3.color("blue")
@@ -65,7 +62,6 @@ while running:
 	snake3.direction = "Stop"
 
 	# snake4 code
-
 	snake4 = turtle.Turtle()
 	snake4.shape("square")
 	snake4.color("pink")
@@ -73,29 +69,29 @@ while running:
 	snake4.goto(-315, 270)
 	snake4.direction = "Stop"
 
-
 	# assigning key directions for snake1
-
+	
+	# snake1 going up
 	def goup1():
 		if snake1.direction != "down":
 			snake1.direction = "up"
-
-
+	
+	# snake1 going down
 	def godown1():
 		if snake1.direction != "up":
 			snake1.direction = "down"
-
-
+	
+	# snake1 going left
 	def goleft1():
 		if snake1.direction != "right":
 			snake1.direction = "left"
-
-
+	
+	# snake1 going right
 	def goright1():
 		if snake1.direction != "left":
 			snake1.direction = "right"
-
-
+	
+	# snake1 moving in general
 	def move1():
 		if snake1.direction == "up":
 			y1 = snake1.ycor()
@@ -146,8 +142,9 @@ while running:
 		if snake2.direction == "right":
 			x2 = snake2.xcor()
 			snake2.setx(x2 + 20)
-
-
+	
+	# assigning key directions for snake3
+	
 	def goup3():
 		if snake3.direction != "down":
 			snake3.direction = "up"
@@ -242,6 +239,7 @@ while running:
 	segment2 = []
 	segment3 = []
 	segment4 = []
+	
 	# mainloop
 	while running:
 		wn.update()
